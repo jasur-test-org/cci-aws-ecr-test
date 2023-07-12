@@ -22,6 +22,9 @@ jobs:
           repo: jasur-test-ecr
           no-output-timeout: 20m
           platform: linux/amd64
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          region: AWS_DEFAULT_REGION
 workflows:
   build-and-push:
     jobs:
