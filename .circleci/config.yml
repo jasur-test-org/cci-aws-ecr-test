@@ -28,5 +28,4 @@ jobs:
 workflows:
   build-and-push:
     jobs:
-      - build:
-          context: aws-temp-context
+      - build
