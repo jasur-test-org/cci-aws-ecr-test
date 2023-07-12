@@ -19,7 +19,7 @@ jobs:
           dockerfile: Dockerfile
           extra-build-args: '--compress'
           push-image: true
-          repo: 660990364978.dkr.ecr.ap-northeast-1.amazonaws.com/jasur-test-ecr
+          repo: jasur-test-ecr
 workflows:
   build-and-push:
     jobs:
