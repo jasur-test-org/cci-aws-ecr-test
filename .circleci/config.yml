@@ -6,6 +6,9 @@ jobs:
   build:
     docker:
       - image: cimg/openjdk:20.0.1
+    environment:
+      JASUR_TEST_VAR_1: "TEST VALUE 1"
+      JASUR_TEST_VAR_2: "TEST VALUE 2"
     steps:
       - setup_remote_docker:
           version: 20.10.14
@@ -16,3 +19,5 @@ workflows:
   build-and-push:
     jobs:
       - build
+
+
