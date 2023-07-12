@@ -14,10 +14,14 @@ jobs:
           version: 20.10.14
       - checkout
       - run: docker images
-
+      - aws-ecr/build-and-push-image:
+          create-repo: true
+          dockerfile: Dockerfile
+          extra-build-args: '--compress'
+          push-image: true
+          repo: 660990364978.dkr.ecr.ap-northeast-1.amazonaws.com/jasur-test-ecr
 workflows:
   build-and-push:
     jobs:
-      - build
-
-
+      - build:
+          context: aws-temp-context
