@@ -5,13 +5,12 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cimg/base:2022.06
-    # resource_class: xlarge
+      - image: cimg/openjdk:20.0.1
+    resource_class: xlarge
     steps:
       - setup_remote_docker:
-          version: 20.10.14
+          version: 20.10.14 
       - checkout
-      - run: java --version
       - run: docker images
 
 workflows:
