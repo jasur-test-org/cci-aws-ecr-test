@@ -20,6 +20,8 @@ jobs:
           extra-build-args: '--compress'
           push-image: true
           repo: jasur-test-ecr
+          no-output-timeout: 20m
+          platform: linux/amd64
 workflows:
   build-and-push:
     jobs:
