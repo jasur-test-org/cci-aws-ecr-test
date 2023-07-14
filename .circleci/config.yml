@@ -39,3 +39,5 @@ workflows:
           context: aws-temp-context
       - build-new:
           context: aws-temp-context
+          requires:
+            - build
