@@ -17,7 +17,7 @@ jobs:
       - aws-ecr/build-and-push-image:
           create-repo: true
           dockerfile: Dockerfile
-          extra-build-args: '--build-arg JASUR-TEST-ARG="this_value_is_updated_from_ecr_orb"'
+          extra-build-args: '--build-arg JASUR_TEST_ARG="this_value_is_updated_from_ecr_orb"'
           push-image: true
           repo: jasur-test-ecr
           no-output-timeout: 20m
