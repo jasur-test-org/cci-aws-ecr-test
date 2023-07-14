@@ -29,7 +29,7 @@ jobs:
     steps:
       - setup_remote_docker:
           version: 20.10.14
-      - aws-ecr/login
+      - aws-ecr/ecr-login
       - run: docker pull 660990364978.dkr.ecr.ap-northeast-1.amazonaws.com/jasur-test-ecr:latest
       - run: docker run -d 660990364978.dkr.ecr.ap-northeast-1.amazonaws.com/jasur-test-ecr:latest
       - run: docker ps
