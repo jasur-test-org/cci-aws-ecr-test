@@ -17,13 +17,25 @@ jobs:
       - aws-ecr/build-and-push-image:
           create-repo: true
           dockerfile: Dockerfile
-          extra-build-args: '--compress'
+          extra-build-args: '--build-arg JASUR-TEST-ARG="this_value_is_updated_from_ecr_orb"'
           push-image: true
           repo: jasur-test-ecr
           no-output-timeout: 20m
           platform: linux/amd64
+
+    build-new:
+      docker:
+        - image: cimg/base:20/04
+      steps:
+        - setup_remote_docker:
+            version: 20.10.14
+        - run: docker pull 660990364978.dkr.ecr.ap-northeast-1.amazonaws.com/jasur-test-ecr:latest
+        - run: docker run -d 660990364978.dkr.ecr.ap-northeast-1.amazonaws.com/jasur-test-ecr:latest
+        - run: docker ps
 workflows:
   build-and-push:
     jobs:
       - build:
+          context: aws-temp-context
+      - build-new:
           context: aws-temp-context

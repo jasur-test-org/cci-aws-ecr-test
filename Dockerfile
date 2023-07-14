@@ -1,4 +1,7 @@
 FROM ubuntu:18.04
+ARG JASUR-TEST-ARG="defaultValue"
+
+ENV JASUR-TEST-VAL=$JASUR-TEST-ARG
 
 # Install dependencies
 RUN apt-get update && \
