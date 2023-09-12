@@ -1,0 +1,1 @@
+# cci-aws-ecr-test
